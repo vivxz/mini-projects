@@ -2,7 +2,7 @@ import React from 'react';
 import {graphql, useStaticQuery} from 'gatsby';
 import Layout from '../components/layout';
 
-export default function Blog() { 
+export default function Notes() { 
   const data = useStaticQuery(graphql`
   query {
     allMarkdownRemark {
@@ -20,12 +20,12 @@ export default function Blog() {
   return (
     <Layout>
       {console.log(data)}
-      <h2>Blog:</h2>
+      <h2>Notes:</h2>
       <ol>
-        {data.allMarkdownRemark.edges.map((edge) => {
+        {data.allMarkdownRemark.edges.map((edge, i) => {
           return (
             <li>
-              <h2>{edge.node.frontmatter.title}</h2>
+              <h3 key={i}>{edge.node.frontmatter.title}</h3>
               <p>{edge.node.frontmatter.date}</p>
             </li>
           )

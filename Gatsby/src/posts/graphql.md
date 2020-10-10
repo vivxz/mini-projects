@@ -1,5 +1,5 @@
 ---
-title: "Notes on GraphQL"
+title: "GraphQL"
 date: "October 9, 2020"
 ---
 
