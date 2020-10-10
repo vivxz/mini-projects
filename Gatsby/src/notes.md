@@ -1,5 +1,0 @@
-- Gatsby looks into src/pages to see what static page it should create
-- File name matters because index.js implies that it's the homepage
-- Creating new files under pages –– localhost:800/blog (endpoint)
-- You can use <a> tag to link pages or use <Link> from Gatsby
-- props.children are the jsx passed in
