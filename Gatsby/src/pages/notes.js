@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql, useStaticQuery} from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout';
 
 export default function Notes() { 
@@ -11,6 +11,9 @@ export default function Notes() {
           frontmatter {
             title
             date
+          }
+          fields {
+            slug
           }
         }
       }
@@ -25,7 +28,9 @@ export default function Notes() {
         {data.allMarkdownRemark.edges.map((edge, i) => {
           return (
             <li>
-              <h3 key={i}>{edge.node.frontmatter.title}</h3>
+              <Link to={edge.node.fields.slug}>
+                <h3 key={i}>{edge.node.frontmatter.title}</h3>
+              </Link>
               <p>{edge.node.frontmatter.date}</p>
             </li>
           )
