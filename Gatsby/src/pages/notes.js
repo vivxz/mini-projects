@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout';
+import Head from '../components/head';
 
 import notesStyles from './notes.module.scss';
 
@@ -27,6 +28,7 @@ export default function Notes() {
   `)
   return (
     <Layout>
+      <Head title='Notes'/>
       {console.log(data)}
       <h2>Notes:</h2>
       <ol className={notesStyles.posts}>
