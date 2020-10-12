@@ -7,16 +7,19 @@ import notesStyles from './notes.module.scss';
 export default function Notes() { 
   const data = useStaticQuery(graphql`
   query {
-    allMarkdownRemark {
+    allContentfulNotePost (
+      sort:{
+        fields:date,
+        order:DESC
+      }
+    ) {
       edges {
         node {
-          frontmatter {
-            title
-            date
-          }
-          fields {
-            slug
-          }
+          title
+          slug
+          date (
+            formatString: "MMMM DD, YYYY"
+          )
         }
       }
     }
@@ -27,12 +30,12 @@ export default function Notes() {
       {console.log(data)}
       <h2>Notes:</h2>
       <ol className={notesStyles.posts}>
-        {data.allMarkdownRemark.edges.map((edge, i) => {
+        {data.allContentfulNotePost.edges.map((edge, i) => {
           return (
             <li className={notesStyles.post}>
-              <Link to={edge.node.fields.slug}>
-                <h3 key={i}>{edge.node.frontmatter.title}</h3>
-                <p>{edge.node.frontmatter.date}</p>
+              <Link to={edge.node.slug}>
+                <h3 key={i}>{edge.node.title}</h3>
+                <p>{edge.node.date}</p>
               </Link>
             </li>
           )
