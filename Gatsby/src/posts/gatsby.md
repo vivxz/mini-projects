@@ -12,5 +12,8 @@ date: "October 8, 2020"
 5. It's best to create a layout if most of your pages involve the same component (footer, header, and etc.)
 6. Using gatsby-node to call certain APIs: 
    -  `onCreateNode` –– allow us to attach new data on to the individual node; attaching the slug throughout the entirety of our application
+   ![Doc](./images/on-create-node.png)
    - `createPages` –– dynamically create new pages for the site
+   ![Doc](./images/create-pages.png)
 7. `path.basename` –– takes the entire path and reduces it to just the filename
+![Doc](./images/path-basename.png)
