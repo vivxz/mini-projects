@@ -1,15 +1,9 @@
-function add (a: number, b: number, c: boolean, phrase: string) {
-  const sum = a + b;
-  if (c) {
-    console.log(phrase + sum)
-  } else {
-    return a + b
-  }
+function plus(a: number, b: number) {
+  return a + b;
 }
 
-const number1 = 10;
-const number2 = 19;
-const bool = true;
-const phrase = 'Results is: '
+function printResults (num: number) {
+  console.log('Results: ' + num);
+}
 
-const results = add(number1, number2, bool, phrase);
+printResults(plus(10, 19));
