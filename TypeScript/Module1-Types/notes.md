@@ -1,6 +1,6 @@
 ---
-Title: Typescript
-Date: October 13 - 15, 2020
+Title: Typescript –– Types
+Date: October 13 - 19, 2020
 ---
 
 What is TypeScript?
@@ -39,3 +39,11 @@ Notes:
 - Adding : after parameter will set the return statement to a type
 - If the type of a function is `void`, it just means that it doesn't return anything but is used for console logs
 - Undefined is an actual type in TypeScript because it just means that you're not returning anything –– `return;`
+# functions.ts
+- If you were to define a variable to `Function`, you are able to redefine it, so it's best to be more specific: `let [variable]: (a: [parameter], b:[parameter]) => [result parameter];`
+- Define the parameter in a callback will allow us to not write repetitive code when calling the function with the callback
+# unknown-never.ts
+- The type unknown is similar to any yet you can't assign it to other types unless you provide an additional type check
+- Unknown is more restrictive and is better than any
+- The type never crashes/breaks the script and never returns anything
+- Infinite loops = never

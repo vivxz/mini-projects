@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "lite-server"
+    "start": "lite-server",
+    "build": "tsc app.ts -w"
   },
   "devDependencies": {
     "lite-server": "^2.5.4"
